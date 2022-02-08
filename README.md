@@ -1,4 +1,4 @@
-# [Név]
+# Ambrus Pálma Zita
 
 ## Hogyan kezdj neki?
 
