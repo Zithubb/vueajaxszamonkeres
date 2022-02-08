@@ -1,19 +1,32 @@
 <template>
   <div id="app">
     
-    <Statues/>
+    <h1 v-if="route == 'Statues'">
+      Statues
+      <button v-if="route == 'Statues'" @click="goToPaintings()">Paintings</button>
+    </h1>
+    <h1 v-if="route == 'Paintings'">
+      Paintings
+      <button v-if="route == 'Paintings'" @click="goToStatues()">Statues</button>
     
+    </h1>
+    <hr/>
+    <Paintings v-if="route == 'Paintings'"/>
+    
+    <Statues v-if="route == 'Statues'"/>
   </div>
 </template>
 
 <script>
 
 import Statues from './components/Statues.vue'
+import Paintings from './components/Paintings.vue'
 
 export default {
   name: 'App',
   components: {
-    Statues
+    Statues,
+    Paintings
   },
   data() {
     return {
@@ -21,6 +34,13 @@ export default {
     }
   },
   methods: {
+    
+    goToStatues(){
+      this.route = 'Statues';
+    },
+    goToPaintings(){
+      this.route = 'Paintings';
+    }
   }
 }
 </script>

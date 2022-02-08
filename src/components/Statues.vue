@@ -1,7 +1,5 @@
 <template>
   <div>
-    <h1>Statues</h1>
-    <hr>
     <table>
       <thead>
         <tr>
@@ -56,7 +54,7 @@ export default {
         id: null,
         person: '',
         height: '',
-        price: false
+        price: ''
       },
       statues: []
     }
