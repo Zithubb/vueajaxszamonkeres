@@ -75,6 +75,7 @@ export default {
       console.log(Response)
       await this.loadData()
     },
+    //ihh oops
     async newStatue() {
       this.saving='disabled'
      await fetch('http://127.0.0.1:8000/api/statues', {
