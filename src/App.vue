@@ -1,47 +1,26 @@
 <template>
   <div id="app">
-    
-    <h1 v-if="route == 'Statues'">
-      Statues
-      <button v-if="route == 'Statues'" @click="goToPaintings()">Paintings</button>
-    </h1>
-    <h1 v-if="route == 'Paintings'">
-      Paintings
-      <button v-if="route == 'Paintings'" @click="goToStatues()">Statues</button>
-    
-    </h1>
+    <nav>
+      <router-link to="/">Statues</router-link>
+      <router-link to="/paintings">Paintings</router-link>
+    </nav>
     <hr/>
-    <Paintings v-if="route == 'Paintings'"/>
-    
-    <Statues v-if="route == 'Statues'"/>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
 
-import Statues from './components/Statues.vue'
-import Paintings from './components/Paintings.vue'
 
 export default {
   name: 'App',
   components: {
-    Statues,
-    Paintings
   },
   data() {
     return {
-      route: "Statues"
+      state: 'Statues'
     }
   },
-  methods: {
-    
-    goToStatues(){
-      this.route = 'Statues';
-    },
-    goToPaintings(){
-      this.route = 'Paintings';
-    }
-  }
 }
 </script>
 
@@ -53,5 +32,14 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+nav a {
+  padding: 10px;
+  background-color: black;
+  text-decoration: none;
+  color: silver;
+}
+nav a.router-link-exact-active {
+  background-color: whitesmoke;
 }
 </style>

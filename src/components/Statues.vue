@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1>Statues</h1>
     <table>
       <thead>
         <tr>
@@ -11,12 +12,12 @@
       </thead>
       <tbody>
         <tr v-for="statue in statues" v-bind:key="statue.id">
-          <td>{{ statue.person }}</td>
+          <td><router-link :to="'/statues/' + statue.id">{{ statue.person }}</router-link></td>
           <td>{{ statue.height }}</td>
           <td>{{ statue.price }}</td>
           <td>
             <button @click="deleteStatue(statue.id)">Törlés</button>
-            <button @click="editStatue(statue.id)">Szerkesztés</button>
+            <router-link  :to="'/statues/' + statue.id + '/edit'">Szerkesztés</router-link>
           </td>
         </tr>
         <tr>

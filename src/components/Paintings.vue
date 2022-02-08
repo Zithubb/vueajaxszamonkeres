@@ -37,6 +37,7 @@
         </tr>
       </tbody>
     </table>
+    <form action=""></form>
   </div>
 </template>
 
