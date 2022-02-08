@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <nav>
-      <router-link to="/">Statues</router-link>
+      <router-link to="/statues">Statues</router-link>
       <router-link to="/paintings">Paintings</router-link>
     </nav>
     <hr/>
@@ -33,13 +33,17 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+body{
+  background: thistle;
+}
 nav a {
   padding: 10px;
-  background-color: black;
+  background-color: silver;
   text-decoration: none;
-  color: silver;
+  color: black;
 }
 nav a.router-link-exact-active {
-  background-color: whitesmoke;
+  background-color: black;
+  color: silver;
 }
 </style>

@@ -11,12 +11,12 @@
       </thead>
       <tbody>
         <tr v-for="painting in paintings" v-bind:key="painting.id">
-          <td>{{ painting.title }}</td>
+          <td><router-link :to="'/paintings/' + painting.id">{{ painting.title }}</router-link></td>
           <td>{{ painting.year }}</td>
           <td>{{ painting.on_display  }}</td>
           <td>
             <button @click="deletePainting(painting.id)">Törlés</button>
-            <button @click="editPainting(painting.id)">Szerkesztés</button>
+            <router-link  :to="'/paintings/' + painting.id + '/edit'">Szerkesztés</router-link>
           </td>
         </tr>
         <tr>
