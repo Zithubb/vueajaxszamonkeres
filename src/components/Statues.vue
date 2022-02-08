@@ -67,6 +67,7 @@ export default {
      let data = await Response.json()
      this.statues = data
     },
+    //oh loll
     async deleteStatue(id) {
       let Response = await fetch(`http://127.0.0.1:8000/api/statues/${id}`, {
         method: 'DELETE'
